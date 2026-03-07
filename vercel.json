@@ -5,11 +5,5 @@
     "api/**/*.py": {
       "excludeFiles": "{**/*.ipynb,README copy.md,model-0*,farmAI,**/*.md}"
     }
-  },
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index.py"
-    }
-  ]
+  }
 }

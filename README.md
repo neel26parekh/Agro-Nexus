@@ -148,8 +148,9 @@ Then open `http://localhost:8000` in your browser.
 This repository is now structured so the existing website can be deployed directly on Vercel:
 
 - `index.html` and the other HTML pages are served as static files.
-- `api/index.py` handles `/api/health` and all `/api/predict/*` routes.
-- `vercel.json` rewrites `/api/*` requests to the Python function so the frontend does not need to change.
+- `api/health.py` handles `/api/health`.
+- `api/predict/crop.py`, `api/predict/fertilizer.py`, `api/predict/production.py`, and `api/predict/yield.py` handle the prediction routes directly.
+- `vercel.json` keeps the Python bundle small by excluding notebooks and other non-runtime files.
 
 Deploy steps:
 

@@ -953,12 +953,33 @@
             `;
         }
 
+        async function readApiResponse(response) {
+            const contentType = response.headers.get('content-type') || '';
+            const rawText = await response.text();
+
+            if (!rawText) {
+                return {};
+            }
+
+            if (contentType.includes('application/json')) {
+                try {
+                    return JSON.parse(rawText);
+                } catch (error) {
+                    throw new Error('API returned invalid JSON.');
+                }
+            }
+
+            const compactText = rawText.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+            const preview = compactText.slice(0, 180) || 'Non-JSON response received.';
+            throw new Error(`API returned HTML instead of JSON: ${preview}`);
+        }
+
         async function refreshDiagnostics() {
             const response = await fetch('/api/health');
+            const data = await readApiResponse(response);
             if (!response.ok) {
-                throw new Error('Unable to load diagnostics');
+                throw new Error(data.error || 'Unable to load diagnostics');
             }
-            const data = await response.json();
             renderStatus(data);
         }
 
@@ -975,7 +996,7 @@
                 body: JSON.stringify(body)
             });
 
-            const payload = await response.json();
+            const payload = await readApiResponse(response);
             if (!response.ok) {
                 target.innerHTML = `
                     <div class="result-card">
