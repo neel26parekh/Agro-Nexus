@@ -1,12 +1,12 @@
-# Farm-AI
+# Agro Nexus
 
-Farm-AI is a hybrid agriculture project that combines a static web frontend with machine learning notebooks for agricultural decision support. The repository contains a landing website, supporting marketing pages, notebook-based model development for crop and fertilizer recommendations, and links to externally hosted deployments and Google Colab training artifacts.
+Agro Nexus is a hybrid agriculture project that combines a static web frontend with machine learning notebooks for agricultural decision support. The repository contains a landing website, supporting marketing pages, notebook-based model development for crop and fertilizer recommendations, and links to externally hosted deployments and Google Colab training artifacts.
 
 ## Overview
 
 The project is organized around two parts:
 
-1. A Bootstrap-based frontend website for presenting the FarmAI platform and linking users to deployed prediction tools.
+1. A Bootstrap-based frontend website for presenting the Agro Nexus platform and linking users to deployed prediction tools.
 2. A set of Jupyter notebooks used to explore datasets, train models, evaluate performance, and export serialized artifacts with `pickle`.
 
 The repository also includes plain-text references to live and remote assets:
@@ -17,7 +17,7 @@ The repository also includes plain-text references to live and remote assets:
 ## Repository Structure
 
 ```text
-Farm-AI/
+Agro-Nexus/
 ├── index.html
 ├── index copy.html
 ├── product.html
@@ -41,7 +41,7 @@ Farm-AI/
 
 ### `index.html`
 
-Primary landing page for FarmAI. It uses Bootstrap, Font Awesome, Bootstrap Icons, Owl Carousel, and custom inline styling. The navigation includes links to the main content pages and a services dropdown that points to deployed Streamlit tools such as crop recommendation and price prediction.
+Primary landing page for Agro Nexus. It uses Bootstrap, Font Awesome, Bootstrap Icons, Owl Carousel, and custom inline styling. The navigation includes links to the main content pages and a services dropdown that points to deployed Streamlit tools such as crop recommendation and price prediction.
 
 ### `index copy.html`
 
@@ -53,7 +53,7 @@ Static product showcase page following the same visual template as the home page
 
 ### `service.html`
 
-Static services page describing FarmAI offerings.
+Static services page describing Agro Nexus offerings.
 
 ### `team.html`
 
@@ -183,4 +183,4 @@ Without these files, the notebook pipelines cannot be executed successfully.
 
 ## Summary
 
-Farm-AI is best understood as a combined showcase and experimentation repository: the website presents the platform and links users to deployed services, while the notebooks capture the machine learning workflows behind crop recommendation, fertilizer prediction, and yield-related analysis.
+Agro Nexus is best understood as a combined showcase and experimentation repository: the website presents the platform and links users to deployed services, while the notebooks capture the machine learning workflows behind crop recommendation, fertilizer prediction, and yield-related analysis.
